@@ -22,11 +22,13 @@ class App extends Component {
   componentWillReceiveProps(newProps) {
     if (newProps.crewPersonnel !== null) {
       this.setState({ crewPersonnel: newProps.crewPersonnel }, () => {
-        if (window.localStorage.getItem("nameFilter") !== "") {
+        if (window.localStorage.getItem("nameFilter") !== "" &&
+          window.localStorage.getItem("nameFilter") !== null) {
           this.setState({ nameFilter: window.localStorage.getItem("nameFilter") });
           this.FilterByName(window.localStorage.getItem("nameFilter"));
         }
-        if (window.localStorage.getItem("officeFilter") !== "") {
+        if (window.localStorage.getItem("officeFilter") !== "" &&
+          window.localStorage.getItem("officeFilter") !== null) {
           this.setState({ officeFilter: window.localStorage.getItem("officeFilter") });
           this.FilterByOffice(window.localStorage.getItem("officeFilter"));
         }
@@ -64,7 +66,7 @@ class App extends Component {
     window.localStorage.setItem("nameFilter", inputText);
     this.setState({
       crewPersonnel: this.state.crewPersonnel.map((crewMember) => {
-        if (crewMember.name.first.indexOf(inputText) < 0) {
+        if (inputText !== null && inputText !== "" && crewMember.name.first.indexOf(inputText) < 0) {
           return { ...crewMember, filtered: true };
         } else {
           return { ...crewMember, filtered: false };
@@ -77,7 +79,7 @@ class App extends Component {
     window.localStorage.setItem("officeFilter", inputText);
     this.setState({
       crewPersonnel: this.state.crewPersonnel.map((crewMember) => {
-        if (crewMember.location.city.indexOf(inputText) < 0) {
+        if (inputText !== null && inputText !== "" && crewMember.location.city.indexOf(inputText) < 0) {
           return { ...crewMember, filtered: true };
         } else {
           return { ...crewMember, filtered: false };
@@ -97,7 +99,6 @@ class App extends Component {
       applied = this.GetCrewPersonnelByHiringStatus("applied");
       interviewing = this.GetCrewPersonnelByHiringStatus("interviewing");
       hired = this.GetCrewPersonnelByHiringStatus("hired");
-
     }
 
     let inputNameProps = {
@@ -116,10 +117,10 @@ class App extends Component {
       }
     };
 
-    if (this.state.nameFilter !== "") {
+    if (this.state.nameFilter !== "" && this.state.nameFilter !== null) {
       inputNameProps.defaultValue = this.state.nameFilter;
     }
-    if (this.state.officeFilter !== "") {
+    if (this.state.officeFilter !== "" && this.state.officeFilter !== null) {
       inputOfficeProps.defaultValue = this.state.officeFilter;
     }
 
