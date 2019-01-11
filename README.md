@@ -1,7 +1,7 @@
 See https://johnbyrnerepo.github.io/90poe-test/dist/index.html for a working version.
 
 <p align="center">
-  <img src="images/screenshot.png" width="600" title="Menu">
+  <img src="images/Screenshot.png" width="600" title="Menu">
 </p>
 
 This is the readme for the React assignment for 90 percent of everything.
