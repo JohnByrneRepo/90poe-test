@@ -1,6 +1,6 @@
 See https://johnbyrnerepo.github.io/90poe-test/dist/index.html for a working version.
 
-<p align="center">
+<p align="left">
   <img src="images/Screenshot.png" width="600" title="Menu">
 </p>
 
