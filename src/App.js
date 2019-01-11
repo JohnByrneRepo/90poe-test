@@ -102,7 +102,7 @@ class App extends Component {
 
     let inputNameProps = {
       className: "filter-input",
-      placeholder: "",
+      placeholder: "Name",
       onKeyUp: (event) => {
         this.FilterByName(event.target.value)
       }
@@ -110,7 +110,7 @@ class App extends Component {
 
     let inputOfficeProps = {
       className: "filter-input",
-      placeholder: "",
+      placeholder: "Office",
       onKeyUp: (event) => {
         this.FilterByOffice(event.target.value)
       }
