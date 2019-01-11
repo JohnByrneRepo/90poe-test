@@ -1,20 +1,15 @@
-# minimal-react-webpack-babel-setup
+This is the readme for the React assignment for 90 percent of everything.
 
-[![Build Status](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup.svg?branch=master)](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/minimal-react-webpack-babel-setup.svg)](https://greenkeeper.io/)
+The tech stack consists of React, Redux, Webpack, Babel, Jest and Enzyme.
 
-Read more about it: [The Minimal React Webpack Babel Setup](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/)
+The main component App.js features a filter panel with name and office, which are saved in localstorage and re-read on page refresh.
 
-## Features
+There are three columns for applied, interviewing and hired, with the ability to move a crew personnel member from one column to another.
 
-* React 16
-* Webpack 4
-* Babel 7
-* Hot Module Replacement
+Install with `npm install` and run with `npm start`.
 
-## Installation
+Rudimentary tests are written in Jest/Enzyme and may be run with `npm test`.
 
-* `git clone git@github.com:rwieruch/minimal-react-webpack-babel-setup.git`
-* cd minimal-react-webpack-babel-setup
-* npm install
-* npm start
-* visit `http://localhost:8080/`
+Crew personnel data is fetched on page load with Redux saga and Axios. In future, hiring status would be propagated to the server side using a post saga.
+
+Css is currently implemented in the index.html file, in future this would be refactored to React css modules.
